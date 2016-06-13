@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<center>
+	<body bgcolor="#afbfcff">
+		<h1><p>MY CALCULATOR </p></h1>
+		<label>First No :</label>
+		<input id="txt1"  type="text"/><br><br>
+		<label>Second No :</label>
+		<input id="txt2"  type="text"/><br>
+		<br>
+		<input type="button" name="Add" value="Add" onclick="addTwoNumber()"/>
+		<input type="button" name="Sub" value="Sub" onclick="subTwoNumber()"/>
+		<input type="button" name="Sub" value="Div" onclick="divTwoNumber()"/>
+		<input type="button" name="Sub" value="Mult" onclick="multTwoNumber()"/>
+		<p id="demo"></p>
+		<script>
+			function addTwoNumber(){
+    			var a = document.getElementById("txt1").value;
+    			var b = document.getElementById("txt2").value;
+			 var x = Number(a) + Number(b);
+   			 document.getElementById("demo").innerHTML = "Add Value: " + x;
+			}
+			function subTwoNumber(){
+   			 var a = document.getElementById("txt1").value;
+    			var b = document.getElementById("txt2").value;
+			var x = Number(a) - Number(b);
+    			document.getElementById("demo").innerHTML = "Subtract Value: " + x;
+			}
+			function divTwoNumber(){
+   			 var a = document.getElementById("txt1").value;
+    			var b = document.getElementById("txt2").value;
+			var x = Number(a) / Number(b);
+    			document.getElementById("demo").innerHTML = "Division Value: " + x;
+			}
+			function multTwoNumber(){
+    			var a = document.getElementById("txt1").value;
+    			var b = document.getElementById("txt2").value;
+			 var x = Number(a) * Number(b);
+    			document.getElementById("demo").innerHTML = "Multiply Value: " + x;
+		}
+	</script>
+</body> 
+</center>
+</html> 
