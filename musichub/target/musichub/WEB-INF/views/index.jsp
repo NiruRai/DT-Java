@@ -69,21 +69,21 @@
 	<div class="row" id="features">
 
 		<div class="col-sm-4 feature">
-			<img src="<c:url value="/resources/images/tabla.png" />" alt="
+			<img src="<c:url value="resources/images/tabla.png" />" alt="
 				MusicHub" class="img-circle">
 			<h3>Tabla</h3>
 		</div>
 		<!-- end col-sm-4 -->
 
 		<div class="col-sm-4 feature" id="middle-slide">
-			<img src="<c:url value="/resources/images/sitar.png" />" alt="
+			<img src="<c:url value="resources/images/sitar.png" />" alt="
 				MusicHub" class="img-circle">
 			<h3>Sitar</h3>
 		</div>
 		<!-- end col-sm-4 -->
 
 		<div class="col-sm-4 feature" id="last-slide">
-			<img src="<c:url value="/resources/images/flute1.png" />" alt="MusicHub"
+			<img src="<c:url value="resources/images/flute1.png" />" alt="MusicHub"
 				class="img-circle">
 			<h3>Flute</h3>
 		</div>
