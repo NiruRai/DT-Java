@@ -2,10 +2,9 @@ package com.niit.musichub.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
-import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -13,9 +12,13 @@ import org.hibernate.SessionFactory;
 
 import com.niit.musichub.model.Product;
 
-@Repository("ProductDao")
+@Repository
+@Transactional
 public class ProductDaoImpl implements ProductDao {
 
+	public ProductDaoImpl() {
+		// TODO Auto-generated constructor stub
+	}
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -24,40 +27,43 @@ public class ProductDaoImpl implements ProductDao {
 		this.sessionFactory = sessionFactory;
 
 	}
-
-	@Transactional
+	
+	
 	public List<Product> list() {
 		@SuppressWarnings("unchecked")
-		List<Product> listProduct = (List<Product>) sessionFactory.getCurrentSession().createCriteria(Product.class)
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		List<Product> listProduct  = (List<Product>) sessionFactory.getCurrentSession().createQuery("from Product").list();
 		return listProduct;
 	}
 
-	@Transactional
+	
 	public void saveOrUpdate(Product product) {
 		sessionFactory.getCurrentSession().saveOrUpdate(product);
 	}
 
-	@Transactional
+	
 	public void delete(String id) {
 		Product ProductToDelete = new Product();
-		ProductToDelete.setId(id);
+		ProductToDelete.setPid(id);
 		sessionFactory.getCurrentSession().delete(ProductToDelete);
 	}
 
-	@Transactional
+	
 	public Product get(String id) {
-		String hql = "from Product where id=" + id;
+		String hql = "from Product where pid=?";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-
+		query.setString(0, id);
 		@SuppressWarnings("unchecked")
 		List<Product> listProduct = (List<Product>) query.list();
-
 		if (listProduct != null && !listProduct.isEmpty()) {
 			return listProduct.get(0);
 		}
+		else
+		{
+			return null;			
+		}
 
-		return null;
 	}
+
+
 
 }
