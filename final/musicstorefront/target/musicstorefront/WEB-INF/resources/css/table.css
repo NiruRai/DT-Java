@@ -1,0 +1,30 @@
+#table, th, td {
+	border: 1px solid white;
+	border-collapse: collapse;
+	padding: 15px;
+}
+
+#table tr:nth-child(odd) {
+	background-color: #f1f1f1;
+}
+
+#table tr:nth-child(even) {
+	background-color: #ffffff;
+}
+
+#adminlist{
+	list-style-type:none;
+	
+}
+
+#adminlist li{
+	
+	color:blue;
+	font-family:monotype corsiva;
+}
+
+#adminlist p{
+	
+	
+	font-family:monotype corsiva;
+}
