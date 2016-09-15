@@ -86,7 +86,7 @@ public class ProductController {
         //model.addAttribute("product", product);
         model.addAttribute("subject", "My Favorite Product");
         String url= PageContext.REQUEST.toString();
-        model.addAttribute("msg","Dear All,\n \n Greetings from CartPoint.com \n\nI liked this Product, Please click on below link to view the Product\n\n"+ url);
+        model.addAttribute("msg","Dear All,\n \n Greetings from MusicHub.com \n\nI liked this Product, Please click on below link to view the Product\n\n"+ url);
 
         return "sendMail";
     }
